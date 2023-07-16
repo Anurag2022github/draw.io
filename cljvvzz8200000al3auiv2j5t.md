@@ -1,10 +1,11 @@
 ---
-title: "Jenkins Live Project  with Declarative CI/CD Pipeline with groovy syntax using env. variable"
+title: "Jenkins Live Project  with Declarative CI/CD Pipeline with Groovy syntax using env. variable"
+seoTitle: "Jenkins"
 datePublished: Sun Jul 09 2023 20:28:28 GMT+0000 (Coordinated Universal Time)
 cuid: cljvvzz8200000al3auiv2j5t
 slug: jenkins-live-project-with-declarative-cicd-pipeline-with-groovy-syntax-using-env-variable
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1688930464028/a8d9272a-f7d7-4c50-a25f-96136ee6c343.jpeg
-tags: aws, devops, jenkins, devops-articles, trainwithshubham
+tags: aws, devops, devops-articles, 90daysofdevops, trainwithshubham
 
 ---
 
@@ -14,7 +15,7 @@ tags: aws, devops, jenkins, devops-articles, trainwithshubham
 
 Launch an EC2 instance and install Jenkins. Use this instance as a Jenkins server using the t2-micro instance type.
 
-ssh -i "jenkins-key.pem" [ubuntu@ec2-13-232-61-41.ap-south-1.compute.amazonaws.com](mailto:ubuntu@ec2-13-232-61-41.ap-south-1.compute.amazonaws.com)(SSH into the jenkins server)
+ssh -i "jenkins-key.pem" [ubuntu@ec2-13-232-61-41.ap-south-1.compute.amazonaws.com](mailto:ubuntu@ec2-13-232-61-41.ap-south-1.compute.amazonaws.com)(SSH into the jenkins server.)
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1688932433696/f2187465-70d9-4f90-9eea-8a5ab9afbaba.png align="center")
 
@@ -23,6 +24,62 @@ Use the code from Github **"django-notes-app".**
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1688931252468/3624448c-56c4-4156-b67e-08333d5e0157.png align="center")
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1688929167484/28b058d7-4502-4e8c-bdc0-bf9359d446b8.png align="center")
+
+**“sh” is used for Groovy syntax for shell command**
+
+ **Used the special syntax to use the env. variable to login**
+
+withCredentials(\[usernamePassword(credentialsId:"dockerHub",passwordVariable:"dockerHubPass",usernameVariable:"dockerHubUser")\]){
+
+ **withCredentials-function, which gives the password through the ID (env. variable)**
+
+**sh "docker tag my-note-app $env.dockerHubUser/my-note-app:latest"**
+
+ \[Tag with your username and upload it to Docker Hub with the latest version.\]
+
+ **sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPass}"**
+
+ Login to the docker hub with the above command
+
+   **sh "docker push ${env.dockerHubUser}/my-note-app:latest"**
+
+ This will push the code to the docker hub.
+
+  echo "Deploying the container"
+
+  sh "docker-compose down && docker-compose up -d"
+
+ **sh "docker run -d 8000:8000 anuraglovesdocker/my-note-app:latest"**
+
+ docker run detached mode publish port 8000 system 8000 container
+
+ Note: Open port 8000 in NSG and use the public IP for running on the website
+
+ echo "Deploying the container"
+
+                **sh "docker-compose down && docker-compose up -d"**
+
+**To make the website more robust, since when we run the website, it runs on the same port 8000, which is already** [**allocated. So**](http://allocated.So) **we need to use Docker Compose, which will down the existing port 8000 and up it again.**
+
+**Docker compose is a special type of YML** [**file. It**](http://file.It) **can run multiple containers and it will be managed by docker compose.**
+
+ **build : . --- build in the same file**
+
+**It creates a service called web**
+
+**The docker build and docker run commands are managed in build: and ports:**
+
+ **sudo apt-get install docker-compose --to install**
+
+**At the deploy stage, the docker container is down (removes previous container)**
+
+**Updated**
+
+**Then goes up**
+
+  **sh "docker-compose down and docker-compose up -d"**         
+
+Add the image from the Docker Hub to the docker compose
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1688931382657/61550788-27ae-4f70-a4f9-9b301eddba19.png align="center")
 
@@ -40,11 +97,11 @@ $ sudo apt install docker-compose ( it is a special type of yml file that runs m
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1688933832022/676b31a9-6ff4-48cd-b1d2-01e49106a321.png align="center")
 
-Use Docker compose makes a pipeline robust as it builds and pushes it to the docker hub(***Note:you need to have an account in docker hub)***
+Use Docker compose makes a pipeline robust as it builds and pushes it to the docker Hub (note***:you need to have an account in the Docker Hub)***
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1688929821923/bcd03af7-34cb-4353-8b1b-9b1873c91dcc.png align="center")
 
-*start & setup Jenkins for CI/CD integration (https://*13.232.61.41:8080 once it is allowed from the security group in AWS)
+Start and setup Jenkins for CI/CD integration (https://\*13.232.61.41:8080 once it is allowed from the security group in AWS)
 
 ![Comment installer Jenkins sur Ubuntu 16.04](https://assets.digitalocean.com/articles/jenkins-install-ubuntu-1604/jenkins-plugins.png align="left")
 
@@ -52,7 +109,7 @@ Use the Pipeline script from SCM ( GitHub repository "[django-notes-app/Jenkinsf
 
 Branch -main
 
-Jenkinsfile is added which contains the declarative pipeline(groovy syntax)
+Jenkinsfile is added, which contains the declarative pipeline (groovy syntax)
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1688930690603/233ee39a-9765-4a6d-ada4-f4f149e7624d.png align="center")
 
@@ -64,15 +121,17 @@ Using the env. variable hides your passwords in Groovy syntax. Use the credentia
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1688932862477/5cbd9152-66a7-4686-85c5-2c8ce628738d.png align="center")
 
-Webhooks in GitHub allow developers to receive real-time notifications about events occurring within a repository. They enable the automatic triggering of actions, such as updating external systems, integrating with continuous integration/continuous deployment (CI/CD) pipelines, or sending notifications to external services.
+Webhooks in GitHub allow developers to receive real-time notifications about events occurring within a repository. They enable the automatic triggering of actions, such as updating external systems, integrating with continuous integration and continuous deployment (CI/CD) pipelines, or sending notifications to external services.
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1688934164299/047f0dba-73b9-4f82-b9b5-215d9592d11f.png align="center")
 
+payload URL will have the Jenkins URL
+
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1688934246055/a999a0f9-34e6-4f35-882d-b037f4ae7a44.png align="center")
 
-Automates continuous deployment any change in the GitHub code commit will change the CI/CD deployment at end to end level.
+Automates continuous deployment Any change in the GitHub code commit will change the CI/CD deployment at the end-to-end level.
 
-Declarative Checkout SCM**→Clone Code→Build→Push to Docker Hub→Deploy**
+Declarative Checkout SCM**Clone CodeBuildPush to Docker HubDeploy**
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1688928082292/5fd74629-711f-4d99-bd5e-d637c0c64d57.png align="center")
 
@@ -80,6 +139,6 @@ Declarative Checkout SCM**→Clone Code→Build→Push to Docker Hub→Deploy**
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1688928623131/1de94ab1-9df7-40ae-b35d-b3e95037d65e.png align="center")
 
-**Congratulations !!! your application is up and ready Hurray.**
+**Congratulations !!! Your application is up and ready!**
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1688928713616/0e31bb37-166d-4998-84c7-5489e7508742.png align="center")
