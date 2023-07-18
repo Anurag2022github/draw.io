@@ -10,19 +10,19 @@ tags: linux, devops, linux-for-beginners, 90daysofdevops, trainwithshubham
 
 ### 🔥Overview
 
-As a Linux administrator, one of the critical aspects of maintaining a secure and reliable system is effective patch management. In this blog post, we'll delve into what patch management is, why it's essential, and how the process of patching and rolling back works in Linux.
+As a DevOps engineer, one of the critical aspects of maintaining a secure and reliable system is effective patch management. In this blog post, we'll delve into what patch management is, why it's essential, and how the process of patching and rolling back works in Linux.
 
 **👍Patch Management: An Overview**
 
 Patch management refers to the process of keeping a computer system up-to-date with the latest software updates, fixes, and security patches. These updates are released by software vendors, including the Linux community, to address various issues such as security vulnerabilities, bugs, performance improvements, and feature enhancements.
 
-Proper patch management is crucial for several reasons:
+😁Proper patch management is crucial for several reasons:
 
-1. **Security:** Unpatched systems are vulnerable to various cyberthreats. Regularly applying security patches helps protect your Linux system from potential exploits and attacks.
+1. **Security:** Unpatched systems are vulnerable to various cyber threats. Regularly applying security patches helps protect your Linux system from potential exploits and attacks.
     
 2. **Stability:** Patches not only address security concerns but also fix bugs and improve overall system stability, leading to a more reliable computing environment.
     
-3. **Performance:** Some patches can optimise system performance, ensuring your Linux system runs efficiently.
+3. **Performance:** Some patches can optimize system performance, ensuring your Linux system runs efficiently.
     
 4. **Compatibility:** Staying updated with patches ensures compatibility with newer software and hardware releases.
     
@@ -31,24 +31,26 @@ Proper patch management is crucial for several reasons:
 
 The patching process in Linux typically involves the following steps:
 
-1. **Monitoring:** As a Linux administrator, you need to stay informed about new updates and patches. Monitoring official channels, mailing lists, security advisories, and release notes from Linux distributions and software vendors is crucial.
+1. **Monitoring:** You need to stay informed about new updates and patches. Monitoring official channels, mailing lists, security advisories, and release notes from Linux distributions and software vendors is crucial.
     
-2. **Assessment:** Before applying a patch, it's essential to assess its impact on the system. Some patches may introduce compatibility issues or conflicts with existing configurations. Having a test environment to evaluate patches before deploying them in production is a good practise.
+2. **Assessment:** Before applying a patch, it's essential to assess its impact on the system. Some patches may introduce compatibility issues or conflicts with existing configurations. Having a test environment to evaluate patches before deploying them in production is a good practice.
     
 3. **Backup:** Before applying any patches, it is essential to back up critical data and configurations. This step acts as a safety net in case anything goes wrong during the patching process.
     
 
 **Applying Patches:** Linux distributions usually come with package managers (e.g., apt for Debian/Ubuntu, yum/dnf for Red Hat/CentOS/Fedora) that simplify the process of downloading and installing patches. By running specific commands, you can update individual packages or the entire system.
 
-# **PATCH MANAGEMENT:**
+### **😁PATCH MANAGEMENT:**
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1689682144919/5b2473ef-a6a3-44ea-afe5-afbcfba3df0a.png align="center")
+
+**Pre-requisites:**
 
 **Inform the application owners and stakeholders about the updates and changes.**
 
 **Send a list of all the apps and kernel upgrades**
 
- **Check the module files for pre-checks -** `ls -l /var/lib/ modules/kernel-versions/mod.dep`
+**Check the module files for pre-checks -** `ls -l /var/lib/ modules/kernel-versions/mod.dep`
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1689682170268/e2e98c38-251d-4162-9ae1-8976e76634a4.png align="center")
 
@@ -58,7 +60,7 @@ The patching process in Linux typically involves the following steps:
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1689682296952/80ab6d43-e9a5-49f3-acf0-873f9fc713f1.png align="center")
 
-###  **Post checks:**
+### **😎Post checks:**
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1689682371535/81e58e50-a7b5-4f2a-a052-62d79bf80771.png align="center")
 
@@ -86,19 +88,19 @@ lsblk **lists information about all available or specified block devices**. The
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1689682434158/7aaae2d6-0fc1-468c-8eba-174199b822b8.png align="center")
 
- **Command yum history list all gives all the ID's.**
+**Command yum history list all gives all the ID's.**
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1689682461084/df1d4463-61d5-437d-859a-6d7faa07c146.png align="center")
 
-**<mark>You</mark> *<mark> cannot roll back to the previous version of the kernel.In case you want the old kernel, we need to interrupt the GRUB and then start the process</mark>*<mark>.</mark>**
+**<mark>You</mark> *<mark>cannot roll back to the previous version of the kernel.In case you want the old kernel, we need to interrupt the GRUB and then start the process</mark>*<mark>.</mark>**
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1689682532419/21b22b0d-e083-4738-8b12-ea1db02dd8d4.png align="center")
 
- **Roll back the previous versions using the command:**`-yum history undo 10 (Transaction ID)`
+**Roll back the previous versions using the command:**`-yum history undo 10 (Transaction ID)`
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1689682557929/a78ce97e-59ad-4164-a4d1-ba1b45718f46.png align="center")
 
- **The downgrade of the packages is visible in the screenshot**
+**The downgrade of the packages is visible in the screenshot**
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1689682570335/030940cd-e903-4b69-96cf-cdafd17a6f01.png align="center")
 
@@ -110,7 +112,7 @@ lsblk **lists information about all available or specified block devices**. The
 
 **Once done, check with the application team for sanity checks.**
 
-###  ***Troubleshooting:***
+### **🥲Troubleshooting:**
 
 **Issues after Patching Activity(Recreate kernel panic issue, then try to fix it.)**
 
@@ -138,7 +140,7 @@ lsblk **lists information about all available or specified block devices**. The
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1689682810910/809cfa18-a95a-494a-a1a3-b5ee81c950f0.png align="center")
 
- `Dracut command` **to recreate the initramfs image and file**
+`Dracut command` **to recreate the initramfs image and file**
 
 **Once the image is created, reboot and change the priority to hard drive in boot.**
 
@@ -146,4 +148,8 @@ lsblk **lists information about all available or specified block devices**. The
 
 To check on the patching management in detail, please check the below video
 
-%[https://www.youtube.com/watch?v=Q3NEEJj49l4]
+%[https://www.youtube.com/watch?v=Q3NEEJj49l4] 
+
+### **😊Conclusion:**
+
+Patch management is a fundamental responsibility of Linux administrators to ensure the security, stability, and performance of their systems. By staying informed about updates, carefully assessing patches, and having a rollback plan in place, administrators can effectively manage patches and maintain a reliable and secure Linux infrastructure. Remember, always test patches in a controlled environment before applying them in a production environment, and don't forget to back up your critical data regularly. Happy patching!
