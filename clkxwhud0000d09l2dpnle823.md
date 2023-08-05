@@ -26,7 +26,7 @@ Ensure backup is sufficient and if there isn't any suficient backup then create 
 
 ![What does a DevOps Engineer do? - Career insights & Job Profiles](https://www.freelancermap.com/images/upload/devops-engineer-responsibilities-background-skills-salary.JPG align="left")
 
-###  😎Daily Tasks:
+### 😎Daily Tasks:
 
 \-Make sure the pipeline is running smoothly- He needs to make sure the CI/CD pipeline is intact & fixing any issue or failure with it is the topmost priority
 
@@ -54,39 +54,35 @@ they often need to spend time on troubleshooting, analyzing and providing fixes 
 
 First and foremost tasks that you do is the daily stand-up meetings
 
- Your Team that are involved in DevOps,Development,QA , Operations meet together to discuss on what needs to be done and how it needs to be [done. Team](http://done.Team) lead will be assigned a specific task for that particular day & he will also take the feedback of your work at the end of the day.
+Your Team that are involved in DevOps,Development,QA , Operations meet together to discuss on what needs to be done and how it needs to be [done. Team](http://done.Team) lead will be assigned a specific task for that particular day & he will also take the feedback of your work at the end of the day.
 
- 1. Check your mail & JIRA tickets which tell the task for the day(not for the entire week)
+1\. Check your mail & JIRA tickets which tell the task for the day(not for the entire week)
 
 1. Check notifications from monitoring systems (Grafana,Zabbix) for continuos monitoring(health & security),after your deploy your applications of production servers.
     
-
-1. Check critical alerts are unattended- Critical notifications or messages related to your DevOps teams or application it is your responsibility to make sure it is unattended or may be you need to work on it or the required person to do it.
+2. Check critical alerts are unattended- Critical notifications or messages related to your DevOps teams or application it is your responsibility to make sure it is unattended or may be you need to work on it or the required person to do it.
+    
+3. Help & support to developers - Talk to the developers to help them write the code elegantly & efficiently after that it's your responsiblity to move it to further stages,testing , integration,deployment & so on.
+    
+4. Support for Prod servers:- Once the application is deployed you must track the running of the app whether it running smoothly or not or any errors make it robust.Before deploying to Prod servers the application is developed in the continuous developtment phase it might be possible that the environment in which the app was developed in development was different than the environment that we have on the prod, so bcoz of this mismatch in the environment on production and development so the application might not run smoothly. Check the environment is correct all the dependencies issues are resolved as far as the app is concerned.
+    
+5. Automation of Admin repetitive tasks - Since you know one scripting language it is ur responsibility to automate those tasks by writing scripts for the tasks.
+    
+6. Jenkins Job for deployment- The basic unit of execution in Jenkins is a job,as a DevOps Engineer you need to execute Jobs,you have to integrate the code and then you prepare a CICD pipeline.
+    
+7. Support Existing Infra:- Maintain and check the overall infra of your DevOps to figure out whether it is sufficient or not. if it is not sufficient talk to the required members or authorities and make sure you add additional infra or you expand it & if the need arises you also can add new servers to your infra.
+    
+8. Deployment of code successful or not:
+    
+9. Check for proper approvals has been given or not for the code releases: Say you have to develop an app with 20 features,you will not develop it for 20 but 5 features and then release it .you will check the performance of that app with the 5 features and also will take the feedback from users whether the app is running well and users are liking it or not,how the feautres are and then you again release the applications with few more features say for eg. in the first version there were 5 feautures now you have 10 features plus the feedback of the first 5 features so this the 2nd iteration of the second version of the application.
     
 
-1. Help & support to developers - Talk to the developers to help them write the code elegantly & efficiently after that it's your responsiblity to move it to further stages,testing , integration,deployment & so on.
-    
+This is how your application is launched, and it is deployed on Prod servers version by version or you can say iterations, & again you take the final feedback of the application. This is one of the most important things that DevOps do to increase the quality.
 
-1. Support for Prod servers:- Once the application is deployed you must track the running of the app whether it running smoothly or not or any errors make it robust.Before deploying to Prod servers the application is developed in the continuous developtment phase it might be possible that the environment in which the app was developed in development was different than the environment that we have on the prod, so bcoz of this mismatch in the environment on production and development so the application might not run smoothly. Check the environment is correct all the dependencies issues are resolved as far as the app is concerned.
-    
-
-1. Automation of Admin repetitive tasks - Since you know one scripting language it is ur responsibility to automate those tasks by writing scripts for the tasks.
-    
-2. Jenkins Job for deployment- The basic unit of execution in Jenkins is a job,as a DevOps Engineer you need to execute Jobs,you have to integrate the code and then you prepare a CICD pipeline.
-    
-3. Support Existing Infra:- Maintain and check the overall infra of your DevOps to figure out whether it is sufficient or not. if it is not sufficient talk to the required members or authorities and make sure you add additional infra or you expand it & if the need arises you also can add new servers to your infra.
-    
-4. Deployment of code successful or not:
-    
-5. Check for proper approvals has been given or not for the code releases: Say you have to develop an app with 20 features,you will not develop it for 20 but 5 features and then release it .you will check the performance of that app with the 5 features and also will take the feedback from users whether the app is running well and users are liking it or not,how the feautres are and then you again release the applications with few more features say for eg. in the first version there were 5 feautures now you have 10 features plus the feedback of the first 5 features so this the 2nd iteration of the second version of the application.
-    
-
-This is how your application is launched and it is deployed on Prod servers version by version or you can say iterations & again you take the final feedback of the application. This is one of the most important thing that DevOps do to increase the quality.
-
-Every company works on Building and Releasing the applications , releasing different versions at a certain intervals of time and attaining the milestones.
+Every company works on Building and Releasing the applications, releasing different versions at certain intervals of time and attaining milestones.
 
 ### 🥲**Day to Day role :**
 
-I am part of the DevOps team, we handle the entire Build and release management process. For every release it will be changing, like taking responsibility of VCS, Implementing the branching strategies, access controls on the VCS and configuration systems.Responsible to implement CI across all the projects in the [account.As](http://account.As) part of our work we use Jenkins, Docker for containerization, and Ansible for deployment writing Ansible playbooks and committing it into the Git repository.We make use of all these technology tools as part of the release process,we follow different release cycles, and each releases is handle by one member from our team.I am responsible for QA build which we do it every Mon & Wed.from 12-3 pm,we use Ansible to do the deployments.
+I am part of the DevOps team, we handle the entire Build and release management process. For every release it will be changing, like taking responsibility of VCS, Implementing the branching strategies, access controls on the VCS and configuration systems.Responsible to implement CI across all the projects in the account. As part of our work, we use Jenkins, Docker for containerization, and Ansible for deployment, writing Ansible playbooks and committing it to the Git repository. We make use of all these technology tools as part of the release process, we follow different release cycles, and each release is handled by one member from our team.I am responsible for QA build which we do it every Monday & Wednesday 12-3 pm(example) ,we use Ansible to do the deployments.
 
 ![What does a DevOps engineer do? | Intellipaat](https://intellipaat.com/blog/wp-content/uploads/2017/11/DevOps-01.jpg align="left")
