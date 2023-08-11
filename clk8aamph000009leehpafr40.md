@@ -50,6 +50,8 @@ The patching process in Linux typically involves the following steps:
 
 **Send a list of all the apps and kernel upgrades**
 
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1691717849526/96d602d5-a8e1-4cf5-9dd7-e1ffdafd0e70.png align="center")
+
 **Check the module files for pre-checks -** `ls -l /var/lib/ modules/kernel-versions/mod.dep`
 
 ![](https://cdn.hashnode.com/res/hashnode/image/upload/v1689682170268/e2e98c38-251d-4162-9ae1-8976e76634a4.png align="center")
