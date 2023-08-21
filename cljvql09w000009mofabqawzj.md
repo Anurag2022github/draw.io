@@ -4,7 +4,7 @@ datePublished: Sun Jul 09 2023 17:56:52 GMT+0000 (Coordinated Universal Time)
 cuid: cljvql09w000009mofabqawzj
 slug: aws-basic-architecture
 cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1688924911039/e27f7fdc-bc96-45ed-bb72-b8478cd8495c.gif
-tags: cloud, aws, devops, amazon-web-services, trainwithshubham
+tags: aws, devops, amazon-web-services, 90daysofdevops, trainwithshubham
 
 ---
 
